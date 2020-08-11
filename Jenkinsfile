@@ -8,7 +8,7 @@ pipeline {
 			
 			when {
 				expression{
-					env.BRANCH_NAME =='master' || env.BRANCH_NAME == 'test'
+					env.BRANCH_NAME =='master' 
 				}
 			}
 			
@@ -37,12 +37,12 @@ pipeline {
 		
 			when {
 				expression{
-					env.BRANCH_NAME =='master'
+					env.BRANCH_NAME =='deploy'
 				} 
 			}
 			
 			steps {
-				echo 'deploying the application ...'
+				echo 'deploying the application on the final stage ...'
 			}
 		}
 	}
