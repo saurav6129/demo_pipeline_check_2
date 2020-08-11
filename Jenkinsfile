@@ -28,6 +28,7 @@ pipeline {
 			
 			steps {
 				echo 'testing the application on the test stage...'
+				echo 'testing on the test branch'
 			}
 		}
 		
@@ -36,12 +37,12 @@ pipeline {
 		
 			when {
 				expression{
-					env.BRANCH_NAME =='master'
+					env.BRANCH_NAME =='master'|| env.BRANCH_NAME == 'test'
 				} 
 			}
 			
 			steps {
-				echo 'deploying the application...'
+				echo 'deploying the application ...'
 			}
 		}
 	}
